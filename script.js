@@ -51,7 +51,7 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .services-container, .slider-container, .portfolio-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'left' });
 
@@ -88,5 +88,34 @@ function sendMail() {
     })
     .catch((err) => console.log(err));
 }
+
+// ---- Testimonial Slider javascript-----//
+var swiper = new Swiper(".slide-content", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    centerSlide: 'true',
+    fade: 'true',
+    grabCursor: 'true',
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+  769: {
+    slidesPerView: 3,
+  },
+
+  520: {
+    slidesPerView: 2,
+  },
+},
+    
+  });
 
 
